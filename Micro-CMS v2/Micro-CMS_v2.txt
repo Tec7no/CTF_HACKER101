@@ -1,0 +1,47 @@
+====================================
+==      Level : Moderate          ==
+==                                ==
+== By : Abd El-Aziz Ayman Derbala ==
+====================================
+
+============
+== flag 1 ==
+============
+
+1. i tried to use hydra to guess the username and password .
+   using this 'hydra -L rockyou.txt -p test https-post-form://#######.ctf.hacker101.com/login:
+   "username=^USER^&password=^PASS^":"Unknown user "' 
+
+2. i found a username .
+3. same attack to get a password we can change the alert what we found .
+   when we try to enter username we got that "Invalid password" .
+
+4. let's try this 'hydra -l username -P rockyou.txt https-post-form://#######.ctf.hacker101.com/login:
+   "username=^USER^&password=^PASS^":"Invalid password"'
+
+5. work :) .
+
+============
+== flag 2 ==
+============
+
+1. using burpsuit i tried to analysis requestes that we send to our website i found when we try to reach edit page i go redirect.
+2. so i change request to POST and i got a flag .
+
+another way :
+
+just use curl simply :) .
+
+
+============
+== flag 3 ==
+============
+
+
+1. when u try to enter something like * ' " u got an internal server error with status code 500 .
+2. so from here there is sql we can exploit .
+3. Aftre looking online (cheating) i found a write up that a column name is admins .
+4. let's think out of the box and try to set all passwords in admins column = "whatever u want" .
+5. there is a private page u can access now .
+6. congratulation :) .
+ 
