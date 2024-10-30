@@ -34,7 +34,7 @@ okay no we can try to use stegnography using linux or windows or whatever os u u
 
 payload on linux "cat image.png code.php > merged_file.png" .
 
-then upload file and open the uploaded one on browser and capture the flag .
+then upload file and open the uploaded one on browser and capture the flag and don't forget to change the shell name to '.php' to excute the RCE on the server side .
 
 note : when u use the payload try to modifi the path u upload it in to be like '/../../../../image.png' .
 
