@@ -1,0 +1,3 @@
+/newUser
+/ticket?id=
+/newUser?username=&password=&password2=

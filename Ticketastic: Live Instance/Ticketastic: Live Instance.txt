@@ -1,0 +1,86 @@
+====================================
+==      Level : Moderate          ==
+==                                ==
+== By : Abd El-Aziz Ayman Derbala ==
+====================================
+
+============
+== flag 1 ==
+============
+
+hello again.
+
+first u most look at demo website .
+
+After looking i get all post req i found .
+
++++++++++++++++++++++++++++++++++++++++++++++++++
++                1./newUser                     +
++                2./ticket?id=                  +
++    3./newUser?username=&password=&password2=  +
++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+that's i found okay .
+
+let's back again to live one and we see now we can try to exploit the 3rd req .
+
+and create a new user and log in specaially we this website same structure of the demo so it must work .
+
+ops...there is session check and we got u not logged .
+
+let's try to login using these "username = admin & password = admin" okay we have a msg Invalid password .
+
+so we can try use hydra to bruite force the password .
+
+After using hydra there is a limit of trying u can't use it 4 long .
+
+okay what we can do now?
+
+when i try in demo exploit html tags it work no filter on it .
+
+we have a submit form the admin he can see it and interact with .
+
+okay what about if this admin create a new admin ?
+
+so let's create a hyperlink when he click on create one on his localserver .
+
+payload "<a href="http://localhost/newUser?username=test&password=test&password2=test">Test</a>"
+
+After a while it's work .
+
+u can logging now and there is a flag appare .
+
+
+============
+== flag 2 ==
+============
+
+okay from the second post link i found "2./ticket?id=" we can use sql injection let's try .
+
+when u try to submit in wrong format there is an error appere contaim MARIA DB that's nice .
+
+we are OG guys now xD .
+
+so we need to know what is the version of this DB and what is her name ? 
+
+we can search on that .
+
+i found it "UNION SELECT VERSION(),DATABASE(),3--" .
+
+u can now use a random number on id and inject this payload u will retrive the data u need .
+
+okay now we need to find our data "table name and our columns" .
+
+i tried fast users tabel xD cause if there is a table name it must be users in programing 
+
+table name must be plural and column is singular .
+
+but u can search about payload to use i found one 
+"UNION SELECT 1,GROUP_CONCAT(TABLE_NAME),3 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA=DATABASE()--" .
+
+then u can inject what u need 
+
+i used "UNION SELECT * from users " and i got a flag .
+
+happy hacking .
