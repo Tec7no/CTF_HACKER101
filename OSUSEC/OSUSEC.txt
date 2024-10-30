@@ -1,0 +1,42 @@
+====================================
+==      Level : Moderate          ==
+==                                ==
+== By : Abd El-Aziz Ayman Derbala ==
+====================================
+
+============
+== flag 1 ==
+============
+
+Hi again .
+
+That's a perfect scnario .
+
+First u need to login dashboard doesn't matter who u loged as .
+
+now we need to upgrade privalage to admin to have more licence .
+
+last u can change whatever u want .
+
+1. u can't use hydra to guess the username or password cause u don't have any information 
++ it's blocked After seviral tries .
+
+so perfect thing to do is sql injection .
+
+' OR 1=1 ; --
+
+' OR true; -- -
+
+whatever payload to skip verification and login .
+
+then u need to increase your licence so u need to invistage js .
+
+okay u have a variable called staf now u can use DOM to change staff from student to admin .
+
+then when we try to read js code u see that there is a page called '/update-student/+base64_of_student_encoded' .
+
+okay now u can try to encode the student name u want and u can acces the updage page and got the fullmark .
+
+i wish if i know this in college ... .
+
+Happy Hacking . 
