@@ -1,0 +1,43 @@
+====================================
+==      Level : Moderate          ==
+==                                ==
+== By : Abd El-Aziz Ayman Derbala ==
+====================================
+
+============
+== flag 1 ==
+============
+
+u know about stegnography ?
+
+that's will help u alot .
+
+first we try to review our code .
+
+okay ,there is nothing interested .
+
+okay so it's only file upload vulnarability we can try to upload php file or js .
+
+so the problem not only rgex there is validate too .
+
+okay now we can try to modifi our path to upload .
+
+open burpsuite and capture the traffic while upload then modifi the path to store our image .
+
+congrats u have first flag .
+
+============
+== flag 2 ==
+============
+
+okay no we can try to use stegnography using linux or windows or whatever os u use .
+
+payload on linux "cat image.png code.php > merged_file.png" .
+
+then upload file and open the uploaded one on browser and capture the flag .
+
+note : when u use the payload try to modifi the path u upload it in to be like '/../../../../image.png' .
+
+congrats that's RCE and now u can view all files that u can see the flag on 1 of these files .
+
+oh the php code u know where to find .
